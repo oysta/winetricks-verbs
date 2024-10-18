@@ -1,0 +1,12 @@
+w_metadata retina settings
+
+load_retina() {
+    cat > "${W_TMP}"/_retina.reg <<_EOF_
+REGEDIT4
+
+[HKEY_CURRENT_USER\\Software\\Wine\\Mac Driver]
+"RetinaMode"="Y"
+_EOF_
+
+    w_try_regedit "${W_TMP_WIN}"\\_retina.reg
+}
